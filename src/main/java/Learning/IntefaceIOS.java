@@ -30,7 +30,6 @@ public class IntefaceIOS {
     }
      
     public static void main(String[] args) {
-        
         byte[] BitsOfFile = new byte[100];
         try {
             inputstream.read(BitsOfFile);
@@ -80,9 +79,16 @@ public class IntefaceIOS {
         }
         return tmp-1;
     }
+    public static int MinNumber(int number){
+        int tmp = number;
+        while(String.valueOf(tmp).length() == String.valueOf(number).length()){
+            tmp--;
+        }
+        return tmp+1;
+    }
     public static int[] AllNumbers(int number){
         int[] result  = new int[MaxNumber(number)+1];
-        for (int i = MaxNumber(number); i>=BasicNumber;i-- ){
+        for (int i = MaxNumber(number); i>=MinNumber(BasicNumber);i-- ){
             if(i%2 !=0){
                 result[i] = i;
             }
